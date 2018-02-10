@@ -1,6 +1,6 @@
 let scl = 20;
 let snake = new Snake;
-let foods= [];
+let foods = [];
 function setup() {
   // put setup code here
   createCanvas(600, 400);
@@ -10,17 +10,16 @@ function setup() {
     foods[i].locatoin();
   }
 }
-
 function draw() {
   // put drawing code here
   background(51);
   snake.update();
   snake.show();
-  for(let food of foods){
+  for (let food of foods) {
     food.show();
+    if (snake.eat(food)) { food.locatoin() };
   }
 }
-
 function keyPressed() {
   if (keyCode === UP_ARROW) { snake.dir(0, -1) }
   else if (keyCode === DOWN_ARROW) { snake.dir(0, 1) }

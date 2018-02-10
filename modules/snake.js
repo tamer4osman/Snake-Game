@@ -19,4 +19,8 @@ class Snake {
         this.xSpeed = x;
         this.ySpeed = y;
     }
+    eat(food) {
+        let eating = dist(this.x, this.y, food.x, food.y);
+        return (eating < 1 ? true : false);
+    }
 };
